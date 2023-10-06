@@ -22,6 +22,38 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+let equipos = [
+  {
+    id: 0,
+    miembros: ["Gustavo", "Juan S", "Juan F"],
+    categorias: ["Duelo"]
+  },
+  {
+    id: 1,
+    miembros: ["unknow", "unknow"],
+    categorias: ["unknow"]
+  }
+]
+
+let patrocinantes = ["Banesco", "HP"]
+
+let modalidad = ["Modalidad1", "Modalidad2"]
+
+let categorias = [
+  {
+    nombre: "categoria1",
+    id: 0,
+    equipos: [1, 0],
+    modalidad: "Modalidad1",
+  },
+  {
+    nombre: "categoria2",
+    id: 1,
+    equipos: [1, 0],
+    modalidad: "Modalidad2",
+  }
+]
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

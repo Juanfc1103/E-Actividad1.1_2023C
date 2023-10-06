@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var EquiposRouter = require('./routes/equipos');
 
 var app = express();
 
@@ -20,20 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-let equipos = [
-  {
-    id: 0,
-    miembros: ["Gustavo", "Juan S", "Juan F"],
-    categorias: ["Duelo"]
-  },
-  {
-    id: 1,
-    miembros: ["unknow", "unknow"],
-    categorias: ["unknow"]
-  }
-]
+app.use('/', EquiposRouter);
 
 let patrocinantes = ["Banesco", "HP"]
 
